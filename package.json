@@ -2,9 +2,9 @@
   "name": "chat-app",
   "version": "1.0.0",
   "description": "making chat app by node N socket.io",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
