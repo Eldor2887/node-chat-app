@@ -20,18 +20,17 @@ io.on('connection', (socket) => {
         createAt: 123
     });
 
-    socket.emit('newMessage', {
-        from: 'eldorado.dip@mail.ru',
-        text: 'Hi, how are you?',
-        createAt: 2018
-    });
-
     socket.on('createEmail', (newEmail) => {
         console.log('createEmail', newEmail);
     });
 
     socket.on('createMessage', (message) => {
-        console.log('newMessage from client: ', message);
+        console.log('createMessage', message);
+        io.emit('newMessage', {
+            from: message.from,
+            text: message.text,
+            createAt: new Date().getTime()
+        });
     });
 
     socket.on('disconnect', (socket) => {
