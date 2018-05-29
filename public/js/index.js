@@ -9,5 +9,5 @@
 
  socket.on('newMessage', function(message) {
      console.log('newMessage', message);
-     document.getElementById('message').innerHTML = message.text;
+     document.getElementById('message').innerHTML = message.from + ': ' + message.text;
  });
