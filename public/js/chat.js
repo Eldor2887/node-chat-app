@@ -18,6 +18,17 @@
  }
  socket.on('connect', function () {
      console.log('Connected to the Server.');
+
+     var params = jQuery.deparam(window.location.search);
+     socket.emit('join', params, function (err) {
+         if (err) {
+             alert(err);
+             window.location.href = '/';
+         } else {
+             console.log('No Errors');
+         }
+     });
+
  });
 
  socket.on('disconnect', function () {
