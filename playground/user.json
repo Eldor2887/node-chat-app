@@ -1,0 +1,13 @@
+class Users {
+    constructor(){
+        this.users = [];
+    }
+    addUser(id, name, age){
+        var user = {
+            id,
+            name,
+            age
+        };
+        this.users.push(user);
+    }
+}
